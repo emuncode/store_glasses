@@ -1,0 +1,27 @@
+<table class="table table-hover table-bordered mt-3">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Fullname</th>
+        <th>Address</th>
+        <th>Order Date</th>
+        <th>Payment Method</th>
+        <th>Status</th>
+        <th>Total Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="orderDetail : ${orderDetails}">
+        <tr>
+            <td th:text="${orderDetail.id}"></td>
+            <td th:text="${order.user.fullname}"></td>
+            <td th:text="${order.shippingAddress}"></td>
+            <td th:text="${order.orderDate}"></td>
+            <td th:text="${order.paymentMethod.name}"></td>
+            <td th:text="${order.status.name}"></td>
+            <td th:text="${order.totalOrders}"></td>
+            <td><a th:href="@{/admin/orderDetail} + '?id=' + ${order.id}">Detail</a></td>
+        </tr>
+    </div>
+    </tbody>
+</table>

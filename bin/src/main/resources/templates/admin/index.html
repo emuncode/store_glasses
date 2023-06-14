@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- Header Start -->
+	<div th:include="admin/fragments/header :: headerFragmentAdmin"></div>
+	<!-- Header End -->
+
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-lg-3">
+				<!-- Navbar Start -->
+				<div th:include="admin/fragments/navbar :: navbarFragmentAdmin"></div>
+				<!-- Navbar End -->
+			</div>
+			<div class="col-lg-9">
+				<h1>Welcome to the Admin Dashboard!</h1>
+                <p>This is the main content area where you can display various admin functionalities and information.</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

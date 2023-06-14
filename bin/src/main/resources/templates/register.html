@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Form Sign Up</title>
+<!-- Favicon -->
+<link th:href="@{/img/favicon.ico}" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+	rel="stylesheet">
+
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}"
+	rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<style>
+.form-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.form-container label, .form-container input, .form-container button {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+
+.form-control {
+	border-color: black;
+}
+</style>
+</head>
+<body>
+	<!-- Topbar Start -->
+	<div th:include="fragments/header :: headerFragment"></div>
+	<!-- Topbar End -->
+
+
+	<!-- Navbar Start -->
+	<div th:include="fragments/navbar :: navbarFragment"></div>
+	<!-- Navbar End -->
+	<!-- Page Header Start -->
+	<div
+		class="bg-secondary d-flex flex-column align-items-center justify-content-center"
+		style="min-height: 150px">
+		<h1 class="font-weight-semi-bold text-uppercase mb-3">REGISTER</h1>
+		<div class="d-inline-flex">
+			<p class="m-0">
+				<a href="">Home</a>
+			</p>
+			<p class="m-0 px-2">-</p>
+			<p class="m-0">Register</p>
+		</div>
+	</div>
+	<!-- Page Header End -->
+
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="form-container">
+					<form th:action="@{/home/register}" method="post"
+						th:object="${user}">
+						<div class="mb-3">
+							<label for="fullName" class="form-label">Họ và tên:</label> <input
+								type="text" class="form-control text-primary" id="fullName"
+								name="fullname" th:value="${fullname}" required>
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email:</label> <input
+								type="email" class="form-control text-primary" id="email"
+								name="email" th:value="${email}" required>
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Mật khẩu:</label> <input
+								type="password" class="form-control text-primary" id="password"
+								name="password" th:value="${password}" required>
+						</div>
+						<div class="mb-3">
+							<label for="phoneNumber" class="form-label">Số điện
+								thoại:</label> <input type="tel" class="form-control text-primary"
+								id="numberPhone" name="numberPhone" th:value="${numberPhone}"
+								required>
+						</div>
+						<div class="mb-3">
+							<label for="address" class="form-label">Địa chỉ:</label>
+							<textarea class="form-control text-primary" id="address"
+								name="address" th:value="${address}" rows="2" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary text-white">Sign
+							Up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer Start -->
+	<div th:include="fragments/footer :: footerFragment"></div>
+	<!-- Footer End -->
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-primary back-to-top"><i
+		class="fa fa-angle-double-up"></i></a>
+
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="/lib/easing/easing.min.js"></script>
+	<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+	<!-- Contact Javascript File -->
+	<script src="/mail/jqBootstrapValidation.min.js"></script>
+	<script src="/mail/contact.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="/js/main.js"></script>
+</body>
+</html>

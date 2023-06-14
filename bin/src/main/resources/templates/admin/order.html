@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Order</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- Header Start -->
+	<div th:include="admin/fragments/header :: headerFragmentAdmin"></div>
+	<!-- Header End -->
+
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-lg-3">
+				<!-- Navbar Start -->
+				<div th:include="admin/fragments/navbar :: navbarFragmentAdmin"></div>
+				<!-- Navbar End -->
+			</div>
+			<div class="col-lg-9">
+				<form enctype="multipart/form-data" method="post">
+
+
+					<table class="table table-hover table-bordered mt-3">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Fullname</th>
+								<th>Address</th>
+								<th>Order Date</th>
+								<th>Payment Method</th>
+								<th>Status</th>
+								<th>Total Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<div th:each="order : ${orders}">
+								<tr>
+									<td th:text="${order.id}"></td>
+									<td th:text="${order.user.fullname}"></td>
+									<td th:text="${order.shippingAddress}"></td>
+									<td th:text="${order.orderDate}"></td>
+									<td th:text="${order.paymentMethod.name}"></td>
+									<td th:text="${order.status.name}"></td>
+									<td th:text="${order.totalOrders}"></td>
+									<td><a th:href="@{/admin/orderDetail} + '?id=' + ${order.id}">Detail</a></td>
+								</tr>
+							</div>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
